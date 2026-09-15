@@ -1,0 +1,21 @@
+{
+  "name": "vdac",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/markdoc": "^2.0.6",
+    "@astrojs/mdx": "latest",
+    "@astrojs/node": "^11.0.3",
+    "@astrojs/react": "^6.0.2",
+    "@keystatic/astro": "^5.2.0",
+    "@keystatic/core": "^0.6.4",
+    "astro": "latest",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  }
+}

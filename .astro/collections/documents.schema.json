@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "object",
+      "properties": {
+        "vi": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "vi",
+        "en"
+      ]
+    },
+    "excerpt": {
+      "type": "object",
+      "properties": {
+        "vi": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "vi",
+        "en"
+      ]
+    },
+    "file": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "category": {
+      "type": "object",
+      "properties": {
+        "vi": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "vi",
+        "en"
+      ]
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "excerpt",
+    "file",
+    "date",
+    "category"
+  ]
+}

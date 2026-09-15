@@ -1,0 +1,13 @@
+---
+import '../styles/global.css';
+import { getLang, useTranslations, localize } from '../i18n';
+const { title = 'VDac | Giải pháp kế toán', description = 'Giải pháp kế toán chuyên nghiệp cho doanh nghiệp Việt Nam' } = Astro.props;
+const lang = getLang(Astro.url); const t = useTranslations(lang); const alt = lang === 'vi' ? 'en' : 'vi';
+const nav = [['/',t.home],['/about',t.about],['/services',t.services],['/documents',t.documents],['/support',t.support],['/news',t.news],['/employee',t.employee],['/contact',t.contact]];
+---
+<!doctype html><html lang={lang}><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content={description}/><title>{title}</title><link rel="canonical" href={Astro.url}/></head><body>
+<div class="topbar"><div class="container"><span>Giải pháp kế toán & tư vấn doanh nghiệp</span><span>✦ vdac@vdac.com.vn &nbsp; | &nbsp; 028 7300 8899</span></div></div>
+<header><nav class="container nav"><a class="brand" href={localize('/',lang)}>VD<span>ac</span>.</a><div class="nav-links">{nav.map(([path,label]) => <a href={localize(path,lang)}>{label}</a>)}<a class="lang" href={localize(Astro.url.pathname.replace(/^\/en/, '') || '/',alt)}>{t.language}</a></div><button class="mobile-menu" aria-label={t.menu}>☰</button></nav></header>
+<main><slot /></main>
+<footer class="footer"><div class="container footer-grid"><div><a class="brand" style="color:white" href={localize('/',lang)}>VD<span>ac</span>.</a><p>Đồng hành cùng doanh nghiệp kiến tạo nền tảng tài chính minh bạch, vững vàng.</p></div><div><h4>{t.services}</h4><a href={localize('/services',lang)}>Kế toán doanh nghiệp</a><a href={localize('/services',lang)}>Tư vấn thuế</a><a href={localize('/services',lang)}>Kiểm toán nội bộ</a></div><div><h4>{t.contact}</h4><p>28 Nguyễn Văn Trỗi, P.15<br/>Phú Nhuận, TP. HCM</p><p>028 7300 8899<br/>vdac@vdac.com.vn</p></div><div><h4>{t.follow}</h4><p>LinkedIn</p><p>Facebook</p><p>Zalo OA</p></div></div><div class="container footer-bottom"><span>© 2026 VDac Accounting Solutions.</span><span>Privacy & Terms</span></div></footer>
+</body></html>
